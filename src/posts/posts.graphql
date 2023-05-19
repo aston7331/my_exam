@@ -1,0 +1,27 @@
+type Post{
+    id:String,
+    title:String,
+    content: String,
+    commemts: [Comment],
+}
+
+type Comment {
+    user: String,
+    text:String,
+    date:String,
+}
+
+type Query {
+    getPosts: [Post],
+}
+
+input AddCommentInpute {
+    user: String,
+    text: String,
+    postId: String, 
+}
+
+type Mutation {
+    createPosts(title: String, content: String,): Post, 
+    addComment(input:AddCommentInpute, ): Comment, 
+}
